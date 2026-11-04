@@ -1,18 +1,39 @@
-# Novel Fliy
+# NovelFliy
 
-novel-fliy project.
+Pembaca webtoon brutalist — baca webtoon trending dari sumber aslinya dengan UI estetik.
 
-## Tech stack
+## 📋 Tech Stack
 
 Next.js
 
-## Getting started
+## 📁 Struktur Proyek
 
-See project files for setup instructions.
+```
+novel-main/
+LICENSE
+PRD.md
+README.md
+```
 
-## License
+## 🚀 Getting Started
 
-MIT — see [LICENSE](./LICENSE).
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+> Untuk project HTML statis, cukup buka `index.html` di browser atau serve folder dengan static server.
+
+## 📊 Status Proyek
+
+Dalam pengembangan aktif.
+
+## 📄 Lisensi
+
+MIT — lihat [LICENSE](./LICENSE).
 
 ---
-_Maintained by dezzorigin._
+_Dikembangkan oleh **dezzorigin** (Nabil Aulia Dika)._

@@ -1,5 +1,9 @@
 # NovelFliy
 
+## 🌐 Live Demo
+
+**https://novel-fliy.nblauliadka.workers.dev**
+
 Pembaca webtoon brutalist — baca webtoon trending dari sumber aslinya dengan UI estetik.
 
 ## 📋 Tech Stack

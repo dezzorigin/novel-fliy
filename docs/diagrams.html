@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagram — NovelFliy</title>
+<style>
+  :root { --void:#0a0a0a; --paper:#fff; --lime:#ccff00; --magenta:#ff2d6b; --cyan:#00e5ff; --ember:#ff5c00; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--void); color:var(--paper); font-family:"Space Grotesk",system-ui,sans-serif; }
+  main { max-width:960px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { font-size:28px; text-transform:uppercase; letter-spacing:-.02em; margin:0 0 4px; }
+  h1 span { color:var(--lime); }
+  p.sub { font-family:ui-monospace,monospace; color:#9a9a9a; margin:0 0 32px; font-size:13px; }
+  h2 { font-size:18px; text-transform:uppercase; border-bottom:4px solid var(--paper); padding-bottom:8px; margin:40px 0 16px; }
+  svg { width:100%; height:auto; display:block; background:#111; border:4px solid var(--paper); }
+  .node { fill:#000; stroke:#fff; stroke-width:2; }
+  .node-lime { fill:#000; stroke:var(--lime); stroke-width:3; }
+  .node-cyan { fill:#000; stroke:var(--cyan); stroke-width:2; }
+  .node-mag { fill:#000; stroke:var(--magenta); stroke-width:2; }
+  .lbl { fill:#fff; font:700 15px "Space Grotesk",sans-serif; }
+  .sub2 { fill:#9a9a9a; font:12px ui-monospace,monospace; }
+  .arr { stroke:var(--lime); stroke-width:2.5; fill:none; marker-end:url(#ah); }
+  .arr2 { stroke:#666; stroke-width:2; fill:none; marker-end:url(#ah2); }
+  ol.flow { list-style:none; padding:0; margin:0; border:4px solid var(--paper); }
+  ol.flow li { display:flex; gap:16px; align-items:baseline; padding:14px 16px; border-bottom:2px dashed #444; font-size:15px; }
+  ol.flow li:last-child { border-bottom:0; }
+  ol.flow b.num { background:var(--lime); color:#000; padding:2px 10px; font-family:ui-monospace,monospace; font-size:13px; flex-shrink:0; }
+  code { font-family:ui-monospace,monospace; background:#1c1c1c; padding:1px 6px; font-size:13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Diagram <span>NovelFliy</span></h1>
+  <p class="sub">ARSITEKTUR RUNTIME + ALUR BACA — PR #1, 19 NOV 2026</p>
+
+  <h2>Arsitektur runtime</h2>
+  <svg viewBox="0 0 920 470" role="img" aria-label="Diagram arsitektur NovelFliy">
+    <defs>
+      <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#ccff00"/></marker>
+      <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#666"/></marker>
+    </defs>
+    <rect class="node" x="20" y="30" width="180" height="70" />
+    <text class="lbl" x="40" y="60">BROWSER</text>
+    <text class="sub2" x="40" y="82">desktop / ponsel</text>
+    <rect class="node-lime" x="280" y="30" width="260" height="70" />
+    <text class="lbl" x="300" y="60">CLOUDFLARE PAGES</text>
+    <text class="sub2" x="300" y="82">novelfliy.pages.dev</text>
+    <rect class="node" x="280" y="140" width="260" height="90" />
+    <text class="lbl" x="300" y="170">ASET STATIS</text>
+    <text class="sub2" x="300" y="192">JS / CSS / ikon</text>
+    <text class="sub2" x="300" y="210">.open-next/assets</text>
+    <rect class="node-cyan" x="280" y="270" width="260" height="90" />
+    <text class="lbl" x="300" y="300">WORKER OPENNEXT</text>
+    <text class="sub2" x="300" y="322">halaman + /api/*</text>
+    <text class="sub2" x="300" y="340">nodejs_compat</text>
+    <rect class="node" x="620" y="140" width="280" height="90" />
+    <text class="lbl" x="640" y="170">LIB WEBTOONS-API</text>
+    <text class="sub2" x="640" y="192">fetch + cheerio</text>
+    <text class="sub2" x="640" y="210">validasi url / day / host</text>
+    <rect class="node-mag" x="620" y="270" width="280" height="90" />
+    <text class="lbl" x="640" y="300">CORS PROXY PUBLIK</text>
+    <text class="sub2" x="640" y="322">cors.siputzx.my.id</text>
+    <text class="sub2" x="640" y="340">tanpa kredensial</text>
+    <rect class="node" x="620" y="30" width="280" height="70" />
+    <text class="lbl" x="640" y="60">WEBTOONS.COM</text>
+    <text class="sub2" x="640" y="82">HTML (read-only) + CDN pstatic</text>
+    <path class="arr" d="M200 65 H280" />
+    <path class="arr2" d="M410 100 V140" />
+    <path class="arr2" d="M410 230 V270" />
+    <path class="arr" d="M540 315 H620" />
+    <path class="arr" d="M760 270 V230" />
+    <path class="arr" d="M760 140 V100" />
+    <path class="arr2" d="M810 100 C810 60 700 65 620 65" />
+    <text class="sub2" x="20" y="440">/api/image-proxy langsung ke CDN (Referer: webtoons.com) — tanpa lewat proxy.</text>
+  </svg>
+
+  <h2>Alur baca (pengguna)</h2>
+  <ol class="flow">
+    <li><b class="num">1</b><span>Buka beranda — lihat <strong>Tiket teratas</strong> + grid <strong>Trending</strong>, atau pilih tab hari (Senin–Minggu, Tamat).</span></li>
+    <li><b class="num">2</b><span>Ketik judul di kolom <strong>Cari</strong> → <code>/search?q=</code> → pilih kartu hasil.</span></li>
+    <li><b class="num">3</b><span><strong>Detail</strong> — sinopsis, penulis, status, subscriber → pilih episode dari daftar struk.</span></li>
+    <li><b class="num">4</b><span><strong>Baca</strong> — gulir vertikal halaman gambar; tombol kembali ke atas di pojok kanan bawah.</span></li>
+    <li><b class="num">5</b><span>Butuh sumber asli? Tautan <strong>webtoons.com</strong> ada di detail dan di pesan episode premium.</span></li>
+  </ol>
+
+  <h2>Alur API</h2>
+  <ol class="flow">
+    <li><b class="num">GET</b><span><code>/api/trending?day=</code> → scrape jadwal harian / per hari → <code>{ count, items[] }</code></span></li>
+    <li><b class="num">GET</b><span><code>/api/search?q=</code> → scrape pencarian → <code>{ originals, canvas, items }</code></span></li>
+    <li><b class="num">GET</b><span><code>/api/episodes?url=&amp;page=</code> → meta judul + <code>#_listUl</code> + paginasi</span></li>
+    <li><b class="num">GET</b><span><code>/api/read?url=</code> → <code>#_imageList img</code> → <code>{ images[] }</code></span></li>
+    <li><b class="num">GET</b><span><code>/api/image-proxy?url=</code> → teruskan gambar (allowlist host) + cache 1 tahun</span></li>
+    <li><b class="num">GET</b><span><code>/api/status</code> → <code>{ ok, service, mode, upstream, time }</code> (tanpa upstream)</span></li>
+  </ol>
+</main>
+</body>
+</html>

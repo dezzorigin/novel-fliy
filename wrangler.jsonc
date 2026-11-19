@@ -1,0 +1,8 @@
+{
+  // Konfigurasi runtime Worker untuk @opennextjs/cloudflare.
+  // Deploy produksi dilakukan via cf_pages.py (direct-upload Pages),
+  // file ini dibaca saat build untuk compatibility_date + flags.
+  "name": "novelfliy",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"]
+}

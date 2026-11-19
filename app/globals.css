@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Palet NovelFliy — lihat docs/DESIGN.md. Enam warna bernama, tanpa gradient. */
+@theme {
+  --font-space: var(--font-space), "Space Grotesk", sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", monospace;
+
+  --color-void: #0a0a0a;
+  --color-paper: #ffffff;
+  --color-lime: #ccff00;
+  --color-magenta: #ff2d6b;
+  --color-cyan-bright: #00e5ff;
+  --color-ember: #ff5c00;
+}
+
+@layer base {
+  :root {
+    --accent: #ccff00;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #0a0a0a;
+    color: #ffffff;
+  }
+
+  /* Fokus terlihat di semua kontrol (a11y): ring limau 3px + offset. */
+  :focus-visible {
+    outline: 3px solid #ccff00;
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: #ccff00;
+    color: #0a0a0a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

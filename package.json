@@ -1,0 +1,48 @@
+{
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "lucide-react": "^0.553.0",
+    "next": "15.5.29",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "description": "NovelFliy \u2014 pembaca webtoon brutalist: cari, lihat detail + episode, dan baca webtoon trending langsung dari sumbernya (webtoons.com).",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@opennextjs/cloudflare": "^1.20.17",
+    "@playwright/test": "^1.55.0",
+    "@tailwindcss/postcss": "4.1.11",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "9.39.1",
+    "eslint-config-next": "15.5.29",
+    "puppeteer-core": "^23.11.1",
+    "tailwindcss": "4.1.11",
+    "typescript": "5.9.3",
+    "wrangler": "^4.148.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "name": "novelfliy",
+  "overrides": {
+    "postcss": "^8.5.18"
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "build:worker": "opennextjs-cloudflare build",
+    "dev": "next dev",
+    "lint": "eslint .",
+    "make-video": "node scripts/make-video.mjs",
+    "screenshots": "node scripts/screenshot.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "start": "next start",
+    "sweep": "python3 scripts/advisory-sweep.py",
+    "test": "npx playwright test",
+    "typecheck": "tsc --noEmit",
+    "validate": "node scripts/check-static.mjs"
+  },
+  "version": "1.0.0"
+}

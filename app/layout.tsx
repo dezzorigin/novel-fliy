@@ -13,9 +13,33 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://novelfliy.pages.dev'),
   title: 'NovelFliy — Baca Webtoon Trending dari Sumbernya',
   description:
     'NovelFliy — pembaca webtoon: cari judul, lihat detail dan daftar episode, lalu baca langsung dari webtoons.com. Tanpa daftar, tanpa iklan.',
+  openGraph: {
+    title: 'NovelFliy — Baca Webtoon Trending dari Sumbernya',
+    description:
+      'NovelFliy — pembaca webtoon: cari judul, lihat detail dan daftar episode, lalu baca langsung dari webtoons.com. Tanpa daftar, tanpa iklan.',
+    url: 'https://novelfliy.pages.dev',
+    siteName: 'NovelFliy',
+    type: 'website',
+    images: [
+      {
+        url: 'https://novelfliy.pages.dev/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'NovelFliy — Baca Webtoon Trending dari Sumbernya',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'NovelFliy — Baca Webtoon Trending dari Sumbernya',
+    description:
+      'NovelFliy — pembaca webtoon: cari judul, lihat detail dan daftar episode, lalu baca langsung dari webtoons.com. Tanpa daftar, tanpa iklan.',
+    images: ['https://novelfliy.pages.dev/og-image.png'],
+  },
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
